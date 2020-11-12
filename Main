@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String [] args){
+        Scanner scanner = new Scanner(System.in);
+        Triangle triangle = new Triangle();
+        Circle circle = new Circle();
+        Square square = new Square();
+        double entrada;
+        boolean flag = false;
+
+        do{
+            System.out.println("Bienvenido!\n1.Selecciona la figura:\n1.-Circulo\n2.-Triangulo\n3.-Cuadrado\n");
+            entrada = Double.valueOf(scanner.nextLine());
+            switch ((int) entrada){
+                case 1:
+                    System.out.println("Ingresa el diametro:\n");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    circle.setDiametro(entrada);
+                    System.out.println("Selecciona el valor a obtener:\n1.-Area\n2.-Perimetro\n");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    if(entrada == 1) System.out.println("El area es: " + circle.getArea() + "\n");
+                    else if(entrada == 2) System.out.println("El perimetro es: " + circle.getPerimeter()+"\n");
+                    System.out.println("¿Desea terminar el programa?\n1.-Si\n2.-No");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    if(entrada == 1) {flag = true;break;}
+                    else {break;}
+                case 2:
+                    System.out.println("Ingresa la base:\n");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    triangle.setBase(entrada);
+                    System.out.println("Ingresa la altura:\n");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    triangle.setAltura(entrada);
+                    System.out.println("Selecciona el valor a obtener:\n1.-Area\n2.-Perimetro\n");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    if(entrada == 1) System.out.println("El area es: " + triangle.getArea() + "\n");
+                    else if(entrada == 2) System.out.println("El perimetro es: " + triangle.getPerimeter()+"\n");
+                    System.out.println("¿Desea terminar el programa?\n1.-Si\n2.-No");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    if(entrada == 1) {flag = true;break;}
+                    else {break;}
+                case 3:
+                    System.out.println("Ingresa el lado:\n");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    square.setLado(entrada);
+                    System.out.println("Selecciona el valor a obtener:\n1.-Area\n2.-Perimetro\n");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    if(entrada == 1) System.out.println("El area es: " + square.getArea() + "\n");
+                    else if(entrada == 2) System.out.println("El perimetro es: " + square.getPerimeter()+"\n");
+                    System.out.println("¿Desea terminar el programa?\n1.-Si\n2.-No");
+                    entrada = Double.valueOf(scanner.nextLine());
+                    if(entrada == 1) {flag = true;break;}
+                    else {break;}
+            }
+        }while(flag != true);
+    }
+}
