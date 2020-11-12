@@ -1,0 +1,22 @@
+public class Circle implements Shape{
+
+    private double diametro;
+
+    @Override
+    public double getArea() {
+        return ((diametro/2)*(diametro/2)) * 3.1416;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 2 * 3.1416 * (diametro/2);
+    }
+
+    public double getDiametro() {
+        return diametro;
+    }
+
+    public void setDiametro(double diametro) {
+        this.diametro = diametro;
+    }
+}
